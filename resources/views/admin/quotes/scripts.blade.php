@@ -72,7 +72,7 @@
 <!-- OBTENER DATOS DE LA CITA DEL DATATABLE -->
 <script>
     function editarCita(id){
-        $.get('citas/editar/'+id, function(cita){
+        $.get('citas/editar/1', function(cita){
             //Asignar los datos recuperados a la ventana modal
             $('#Quote_id').val(1);
             $('#txtClient').val(cita[0].client);
