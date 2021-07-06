@@ -37,7 +37,7 @@
             <a class="nav-link" href="{{ route('shop') }}">Productos</a>
             </li>
             <li class="nav-item" style='font-size: 24pt;'>
-            <a class="nav-link" href="{{ route('login') }}">Acceder</a>
+            <a class="nav-link" href="{{ route('admin.login') }}">Acceder</a>
             </li>
         </ul>
         </div>
