@@ -29,9 +29,6 @@
                     url: "{{ route('admin.quotes.index') }}",
                     data: {from_date: from_date, to_date: to_date}
                 },
-                rowReorder: {
-                    dataSrc: "id"
-                },
                 columns:[
                     {data: 'DT_RowIndex', name: 'DT_RowIndex'},
                     //{data: 'id', name: 'id'},
