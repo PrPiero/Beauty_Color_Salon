@@ -11,6 +11,7 @@ class Image extends Model
 
     protected $table = 'images';
     protected $fillable = ['url', 'imageable_id', 'imageable_type'];
+    protected $primaryKey = 'imageable_id';
 
     public function imageable(){
         return $this->morphTo();
