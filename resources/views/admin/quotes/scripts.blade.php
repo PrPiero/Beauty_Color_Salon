@@ -33,8 +33,8 @@
                     dataSrc: "id"
                 },
                 columns:[
-                    {data: 'DT_RowIndex', name: 'DT_RowIndex'},
-                    //{data: 'id', name: 'id'},
+                    //{data: 'DT_RowIndex', name: 'DT_RowIndex'},
+                    {data: 'id', name: 'id'},
                     {data: 'client', name: 'client'},
                     {data: 'phone', name: 'phone'},
                     //{data: 'email', name: 'email'},
