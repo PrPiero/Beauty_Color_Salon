@@ -27,6 +27,13 @@ class DatabaseSeeder extends Seeder
         Storage::makeDirectory('products');
 
         DB::statement("TRUNCATE TABLE workers RESTART IDENTITY CASCADE");
+        DB::statement("TRUNCATE TABLE subcategories RESTART IDENTITY CASCADE");
+        DB::statement("TRUNCATE TABLE products RESTART IDENTITY CASCADE");
+        DB::statement("TRUNCATE TABLE colors RESTART IDENTITY CASCADE");
+        DB::statement("TRUNCATE TABLE color_product RESTART IDENTITY CASCADE");
+        DB::statement("TRUNCATE TABLE sizes RESTART IDENTITY CASCADE");
+        DB::statement("TRUNCATE TABLE color_size RESTART IDENTITY CASCADE");
+        DB::statement("TRUNCATE TABLE images RESTART IDENTITY CASCADE");
         //DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         $this->call(WorkersTableSeeder::class);
         //DB::statement('SET FOREIGN_KEY_CHECKS=1;');
