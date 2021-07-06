@@ -18,7 +18,7 @@ class QuotesController extends Controller
         {
             if (!empty($request->from_date))
             {
-                $quotes = DB::table('quotes')->whereBetween('date', array($request->from_date, $request->to_date))->get();
+                $quotes = Quote::whereBetween('date', array($request->from_date, $request->to_date))->get();
             }
 
             else
@@ -43,7 +43,7 @@ class QuotesController extends Controller
     public function edit(Quote $id)
     {
         //$quote = Quote::with('service')->find($id);
-        $quote = Quote::find($id);
+        $quote = Quote::whereNotIn('id', explode(',', ''))->find($id);
         return response()->json($quote);
     }
 
