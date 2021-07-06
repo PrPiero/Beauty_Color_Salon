@@ -32,6 +32,6 @@ class Quote extends Model
 
     public function getRouteKeyType()
     {
-        return 'int';
+        return 'bigint';
     }
 }
