@@ -24,4 +24,14 @@ class Quote extends Model
     {
         return $this->belongsTo(Service::class);
     }*/
+
+    public function getRouteKeyName()
+    {
+        return 'id';
+    }
+
+    public function getRouteKeyType()
+    {
+        return 'int';
+    }
 }

@@ -20,6 +20,18 @@ class RouteServiceProvider extends ServiceProvider
     protected $namespace = 'App\Http';
     public const HOME = '/dashboard';
 
+    protected const MODEL_ID_BINDINGS = [
+        'id',
+        'notification',
+        // ...
+    ];
+
+    protected const MODEL_UUID_BINDINGS = [
+        'uuid',
+        'photo',
+        'user',
+        // ...
+    ];
     /**
      * The controller namespace for the application.
      *
@@ -42,13 +54,21 @@ class RouteServiceProvider extends ServiceProvider
             Route::prefix('api')
                 ->middleware('api')
                 ->namespace($this->namespace)
-                ->pattern('id', '[0-9]+')
                 ->group(base_path('routes/api.php'));
 
             Route::middleware('web')
                 ->namespace($this->namespace)
-                ->pattern('id', '[0-9]+')
                 ->group(base_path('routes/web.php'));
+
+            Route::patterns(array_merge(
+                array_fill_keys(self::MODEL_ID_BINDINGS, '[0-9]{1,10}'),
+                array_fill_keys(self::MODEL_UUID_BINDINGS, '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}'),
+                [
+                    // ...
+                ]
+            ));
+
+            parent::boot();
         });
     }
 
