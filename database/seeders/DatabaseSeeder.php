@@ -26,11 +26,10 @@ class DatabaseSeeder extends Seeder
         Storage::makeDirectory('subcategories');
         Storage::makeDirectory('products');
 
-        DB::statement('SET session_replication_role = \'replica\';');
+        DB::statement("TRUNCATE TABLE workers RESTART IDENTITY CASCADE");
         //DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         $this->call(WorkersTableSeeder::class);
         //DB::statement('SET FOREIGN_KEY_CHECKS=1;');
-        DB::statement('SET session_replication_role = \'origin\';');
         $this->call(UserSeeder::class);
         $this->call(CategorySeeder::class);
         $this->call(SubcategorySeeder::class);
