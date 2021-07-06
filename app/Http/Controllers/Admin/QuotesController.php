@@ -40,10 +40,11 @@ class QuotesController extends Controller
         return view('admin.quotes.index');
     }
 
-    public function edit(Quote $id)
+    public function edit(Quote $id, Request $request)
     {
         //$quote = Quote::with('service')->find($id);
-        $quote = Quote::find($id);
+        $quote = $id->whereIn('id', $request->id)->get();
+        //$quote = Quote::find($id);
         return response()->json($quote);
     }
 
