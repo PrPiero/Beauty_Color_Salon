@@ -74,14 +74,14 @@
     function editarCita(id){
         $.get('citas/editar/'+id, function(cita){
             //Asignar los datos recuperados a la ventana modal
-            $('#Quote_id').val(cita['0'].id);
-            $('#txtClient').val(cita['0'].client);
-            $('#txtPhone').val(cita['0'].phone);
-            $('#txtEmail').val(cita['0'].email);
-            $('#txtDate').val(moment(cita['0'].date).format('DD/MM/YYYY'));
-            $('#txtDescription').val(cita['0'].description);
-            //$('#txtService').val(cita['0'].service.service);
-            $('#txtState').val(cita['0'].state);
+            $('#Quote_id').val(cita[0].id);
+            $('#txtClient').val(cita[0].client);
+            $('#txtPhone').val(cita[0].phone);
+            $('#txtEmail').val(cita[0].email);
+            $('#txtDate').val(moment(cita[0].date).format('DD/MM/YYYY'));
+            $('#txtDescription').val(cita[0].description);
+            //$('#txtService').val(cita[0].service.service);
+            $('#txtState').val(cita[0].state);
             $("input[name=_token]").val();
             $('#QuoteModal').modal('toggle');
             $('#QuoteModal').on('shown.bs.modal', function () {

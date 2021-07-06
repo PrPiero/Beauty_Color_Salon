@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>{{ config('app.name') }}</title>
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
@@ -17,7 +17,7 @@
         <link rel="stylesheet" href="{{ asset('vendor/fontawesome-free/css/all.min.css')}}">
         {{--glider--}}
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glider-js/1.7.7/glider.min.css" integrity="sha512-YM6sLXVMZqkCspZoZeIPGXrhD9wxlxEF7MzniuvegURqrTGV2xTfqq1v9FJnczH+5OGFl5V78RgHZGaK34ylVg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        
+
         {{--FlexSlider--}}
         <link rel="stylesheet" href="{{ asset('vendor/FlexSlider/flexslider.css')}}">
         @livewireStyles
@@ -58,7 +58,7 @@
                     show(){
                         if (this.open) {
                             //se cierra el menu
-                            this.open = false; 
+                            this.open = false;
                             document.getElementsByTagName('html')[0].style.overflow = "auto"
                         }else{
                             //abriendo el menu
@@ -67,13 +67,13 @@
                         }
                     },
                     close(){
-                            this.open = false; 
+                            this.open = false;
                             document.getElementsByTagName('html')[0].style.overflow = "auto"
                     }
                 }
             }
         </script>
-    
+
         @stack('script')
     </body>
 </html>

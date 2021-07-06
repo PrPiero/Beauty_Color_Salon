@@ -71,7 +71,7 @@
                 <x-cart color="gray">
                 </x-cart>
                 <p class="text-lg text-gray-700 mt-4">Tu carro de compras está vacio</p>
-                <x-button-enlace href="/" class="mt-4 px-16">
+                <x-button-enlace href="{{ route('shop') }}" class="mt-4 px-16">
                     Ir al inicio
                 </x-button-enlace>
             </div>
