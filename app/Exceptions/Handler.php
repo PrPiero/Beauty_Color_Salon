@@ -39,14 +39,4 @@ class Handler extends ExceptionHandler
             //
         });
     }
-
-    public function render($request, Throwable $exception)
-    {
-        if ($exception instanceof \Illuminate\Auth\AuthenticationException and Auth::guard('workers')->check())
-        {
-            return redirect('/admin/login')->with('flash', 'Tiene que iniciar sesión');
-        }
-
-        return parent::render($request, $exception);
-    }
 }
