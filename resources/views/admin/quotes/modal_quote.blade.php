@@ -11,7 +11,6 @@
             <form id="quote-form">
                 @csrf
                 <div class="modal-body">
-                    <input type="hidden" id="Quote_id" name="Quote_id">
                     <div class="form-inline">
                         <div class="container-fluid form-inline row">
                             <label style="cursor: text; display: inline-block; width: 130px;"><b>CLIENTE:</b></label>
@@ -42,7 +41,7 @@
                             <input type="text" class="form-control my-2 col-lg-8" id="txtState" name="txtState" onmousedown="return false" readonly="readonly" value="{{ old('txtState') }}" style="border: 0; outline:none; background-color: white; cursor: text;">
                         </div>
                     </div>
-
+                    <input type="hidden" id="Quote_id" name="Quote_id">
                 </div>
                 <div class="modal-footer justify-content-between">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
