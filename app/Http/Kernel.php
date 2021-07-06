@@ -63,5 +63,6 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'cached' => \App\Http\Middleware\RedirectIfLogout::class,
+        'guest-worker' => \App\Http\Middleware\RedirectIfAuthenticatedWorker::class,
     ];
 }

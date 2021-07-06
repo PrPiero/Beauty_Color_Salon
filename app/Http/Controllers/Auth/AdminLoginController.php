@@ -40,7 +40,7 @@ class AdminLoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest:workers')->except('logout');
+        $this->middleware('guest-worker:workers')->except('logout');
         //$this->middleware('auth:workers', ['only' => ['login']]);
     }
 
