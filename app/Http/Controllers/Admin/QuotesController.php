@@ -43,9 +43,9 @@ class QuotesController extends Controller
     public function edit(Quote $id, Request $request)
     {
         //$quote = Quote::with('service')->find($id);
-        //$quote = $id->whereIn('id', $request->id)->get();
+        $quote = $id->whereIn('id', $request->id)->get();
         //$quote = Quote::find($id);
-        $quote = DB::select('SELECT id, phone, email, description, state FROM quotes WHERE id IN ('.$request->id.')');
+        //$quote = DB::select('SELECT id, phone, email, description, state FROM quotes WHERE id IN ('.$request->id.')');
         //$quote = DB::table('quotes')->select('phone', 'email', 'description', 'state')->whereIn('id', $request->id)->get();
         return response()->json($quote);
     }
