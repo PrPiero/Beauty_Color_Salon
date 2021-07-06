@@ -10,8 +10,8 @@ class Image extends Model
     use HasFactory;
 
     protected $table = 'images';
-    protected $fillable = ['url', 'imageable_id', 'imageable_type'];
     protected $primaryKey = 'imageable_id';
+    protected $fillable = ['url', 'imageable_id', 'imageable_type'];
 
     public function imageable(){
         return $this->morphTo();
