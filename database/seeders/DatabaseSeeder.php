@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
 
         //para borrar las imagenes que crea el factory y por a o b le das fresh
-        DB::statement("TRUNCATE TABLE products RESTART IDENTITY CASCADE");
+        //DB::statement("TRUNCATE TABLE products RESTART IDENTITY CASCADE");
         //Storage::deleteDirectory('categories');
         Storage::deleteDirectory('subcategories');
         Storage::deleteDirectory('products');
