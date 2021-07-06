@@ -42,10 +42,12 @@ class RouteServiceProvider extends ServiceProvider
             Route::prefix('api')
                 ->middleware('api')
                 ->namespace($this->namespace)
+                ->pattern('id', '[0-9]+')
                 ->group(base_path('routes/api.php'));
 
             Route::middleware('web')
                 ->namespace($this->namespace)
+                ->pattern('id', '[0-9]+')
                 ->group(base_path('routes/web.php'));
         });
     }
