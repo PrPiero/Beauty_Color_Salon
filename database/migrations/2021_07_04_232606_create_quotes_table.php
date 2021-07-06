@@ -14,7 +14,8 @@ class CreateQuotesTable extends Migration
     public function up()
     {
         Schema::create('quotes', function (Blueprint $table) {
-            $table->id();
+            //$table->id();
+            $table->integer('id', true, true);
             $table->string('client');
             $table->string('phone');
             $table->string('email');
