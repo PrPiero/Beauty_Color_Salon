@@ -72,10 +72,10 @@
 <!-- OBTENER DATOS DE LA CITA DEL DATATABLE -->
 <script>
     function editarCita(id){
-        $.get('citas/editar/1', function(cita){
+        $.get('citas/editar/'+id, function(cita){
             //Asignar los datos recuperados a la ventana modal
-            $('#Quote_id').val(1);
-            $('#txtClient').val(cita[0].client);
+            $('#Quote_id').val(cita[0].id);
+            $('#txtClient').val("aaa");
             $('#txtPhone').val(cita[0].phone);
             $('#txtEmail').val(cita[0].email);
             $('#txtDate').val(moment(cita[0].date).format('DD/MM/YYYY'));
