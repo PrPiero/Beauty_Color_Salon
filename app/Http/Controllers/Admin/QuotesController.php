@@ -43,7 +43,7 @@ class QuotesController extends Controller
     public function edit(Quote $id)
     {
         //$quote = Quote::with('service')->find($id);
-        $quote = Quote::whereNotIn('id', explode(',', ''))->find($id);
+        $quote = Quote::find($id);
         return response()->json($quote);
     }
 

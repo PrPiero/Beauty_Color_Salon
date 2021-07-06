@@ -53,18 +53,18 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Controllers\Admin', 'middlewa
         //Citas...
         Route::group(['prefix' => 'citas'], function(){
             Route::get('', 'QuotesController@index')->name('admin.quotes.index');
-            Route::get('editar/{id}', 'QuotesController@edit')->name('admin.quotes.edit');
             Route::post('actualizar', 'QuotesController@update')->name('admin.quotes.update');
             Route::post('enviar-email', 'MessageController@store')->name('admin.messages.store');
+            Route::get('editar/{id}', 'QuotesController@edit')->name('admin.quotes.edit');
         });
 
         //Usuarios...
         Route::group(['prefix' => 'usuarios'], function(){
             Route::get('', 'WorkersController@index')->name('admin.users.index');
             Route::post('', 'WorkersController@store')->name('admin.users.store');
+            Route::post('actualizar', 'WorkersController@update')->name('admin.users.update');
             Route::get('eliminar/{id}', 'WorkersController@destroy')->name('admin.users.destroy');
             Route::get('editar/{id}', 'WorkersController@edit')->name('admin.users.edit');
-            Route::post('actualizar', 'WorkersController@update')->name('admin.users.update');
         });
     });
 });
