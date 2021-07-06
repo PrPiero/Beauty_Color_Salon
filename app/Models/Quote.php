@@ -11,7 +11,6 @@ class Quote extends Model
 
     protected $table = 'quotes';
     protected $fillable = [
-        'id',
         'client',
         'phone',
         'email',
@@ -33,6 +32,6 @@ class Quote extends Model
 
     public function getRouteKeyType()
     {
-        return 'integer';
+        return 'int';
     }
 }
