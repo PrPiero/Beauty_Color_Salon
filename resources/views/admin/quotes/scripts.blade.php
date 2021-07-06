@@ -74,7 +74,7 @@
     function editarCita(id){
         $.get('citas/editar/'+id, function(cita){
             //Asignar los datos recuperados a la ventana modal
-            $('#Quote_id').val(cita[0].id);
+            $('#Quote_id').val(1);
             $('#txtClient').val(cita[0].client);
             $('#txtPhone').val(cita[0].phone);
             $('#txtEmail').val(cita[0].email);
