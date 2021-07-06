@@ -6,6 +6,7 @@ use App\Events\WorkerWasCreated;
 use App\Http\Controllers\Controller;
 use App\Models\Worker;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
@@ -97,7 +98,8 @@ class WorkersController extends Controller
     {
         $this->authorize('update', $id);
 
-        $worker = Worker::with('roles')->find($id);
+        $worker = $id->with('roles')->where('id', Auth::user()->id)->get();
+        //$worker = Worker::with('roles')->find($id);
         return response()->json($worker);
     }
 
