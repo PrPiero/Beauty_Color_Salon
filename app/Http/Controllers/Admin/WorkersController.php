@@ -98,8 +98,9 @@ class WorkersController extends Controller
     {
         $this->authorize('update', $id);
 
-        $worker = $id->with('roles')->where('id', Auth::user()->id)->get();
-        //$worker = Worker::with('roles')->find($id);
+        //$worker = $id->with('roles')->where('id', strval($request->id))->get();
+        //$worker = $id->with('roles')->where('id', Auth::user()->id)->get();
+        $worker = Worker::with('roles')->find($id);
         return response()->json($worker);
     }
 
