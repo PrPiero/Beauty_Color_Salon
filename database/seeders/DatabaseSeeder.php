@@ -18,10 +18,10 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
 
         //para borrar las imagenes que crea el factory y por a o b le das fresh
-        //Storage::deleteDirectory('categories');
+        Storage::deleteDirectory('categories');
         Storage::deleteDirectory('subcategories');
         Storage::deleteDirectory('products');
-        //Storage::makeDirectory('categories');
+        Storage::makeDirectory('categories');
         Storage::makeDirectory('subcategories');
         Storage::makeDirectory('products');
 
