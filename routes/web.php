@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CitasController;
 use Livewire\ShoppingCart;
 use Gloudemans\Shoppingcart\Facades\Cart;
-use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Models\Category;
@@ -27,6 +26,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     $categories = Category::all();
     return view('welcome', compact('categories'));
 })->name('dashboard');
+
+//require_once __DIR__ . '/jetstream.php';
 
 // Eliminar productos del carro...
 Route::get('prueba', function () {
@@ -69,6 +70,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Controllers\Admin', 'middlewa
     });
 });
 
+//Autenticación de Trabajadores
 Route::group(['namespace' => 'Controllers\Auth'], function(){
     // Login Routes...
     Route::get('admin/login', 'AdminLoginController@showLoginForm')->name('admin.login');

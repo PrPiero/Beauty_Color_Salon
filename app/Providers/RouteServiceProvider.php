@@ -18,7 +18,7 @@ class RouteServiceProvider extends ServiceProvider
      * @var string
      */
     protected $namespace = 'App\Http';
-    public const HOME = '/dashboard';
+    public const HOME = '/shop';
 
     protected const MODEL_ID_BINDINGS = [
         'id',
